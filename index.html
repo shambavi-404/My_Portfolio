@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -24,6 +25,12 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --card-radius: 20px;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* HIDE SCROLLBAR (seamless look) */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
         }
 
         * {
@@ -88,7 +95,7 @@
         }
 
         section {
-            padding: 120px 0; 
+            padding: 100px 0; 
             position: relative;
         }
 
@@ -146,10 +153,11 @@
         }
 
         /* -----------------------------------------------------------
-           HERO SECTION
+           HERO SECTION (RESTORED TO 100VH)
            ----------------------------------------------------------- */
         .hero {
-            height: 100vh;
+            /* This ensures the About page fills the first screen */
+            min-height: 800px; 
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -703,7 +711,7 @@
     <div class="bg-animation"></div>
 
     <nav>
-        <div class="logo">SHAMBAVI P</div>
+        <div class="logo">SHAMBAVI P </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -715,7 +723,7 @@
     </nav>
 
     <section class="hero container">
-        <div class="hero-text" data-aos="fade-right">
+        <div class="hero-text" data-aos="fade-right"> 
             <h1>I am <br><span>Shambavi P</span></h1>
             <h2 class="hero-subtitle">B.Tech Artificial Intelligence & Data Science Student</h2>
             <p style="color:var(--text-muted); margin-bottom: 2rem; max-width: 500px;">
@@ -774,7 +782,7 @@
                     <span class="skill-tag">Java</span>
                     <span class="skill-tag">R</span>
                     <span class="skill-tag">HTML/CSS</span>
-                    
+                
                 </div>
             </div>
             <div class="skill-category" data-aos="flip-up" data-aos-delay="200">
@@ -859,7 +867,7 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <i class="fa-solid fa-language"></i>
-                        <h3>Hindi Cert.</h3>
+                        <h3>Hindi Certificate </h3>
                         <p>Dakshin Bharat Prachar Sabha</p>
                     </div>
                     <div class="flip-card-back">
@@ -875,7 +883,7 @@
         <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
         <div class="contact-container" data-aos="fade-up">
             <div class="contact-info">
-                <h3 style="margin-bottom: 1rem;">Let's talk about Data.</h3>
+                <h3 style="margin-bottom: 1rem;">Let's Get Connect</h3>
                 
                 <div class="availability-badge">
                     <div class="availability-dot"></div>
@@ -893,13 +901,13 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="#" target="_blank" class="social-btn" title="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/shambavi-404" target="_blank" class="social-btn" title="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
+    <a href="https://www.linkedin.com/in/shambavi-p-01864138a/" target="_blank" class="social-btn" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="https://github.com/shambavi-404" target="_blank" class="social-btn" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+    </a>
+</div>
             </div>
             
             <form class="contact-form" action="#" onsubmit="event.preventDefault();">
