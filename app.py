@@ -1,40 +1,40 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# 1. Set page to wide mode
+# 1. Page Configuration
 st.set_page_config(page_title="Shambavi P | Portfolio", page_icon="💻", layout="wide")
 
-# 2. CSS to remove Streamlit's default padding and margins
+# 2. Hard Override of Streamlit's CSS to remove ALL white space
 st.markdown("""
     <style>
-        .reportview-container {
-            margin-top: -2em;
+        /* Removes padding from the main block */
+        .block-container {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+            padding-left: 0rem !important;
+            padding-right: 0rem !important;
         }
-        #root > div:nth-child(1) > div > div > div > div > section > div {
-            padding-top: 0rem;
-            padding-bottom: 0rem;
-            padding-left: 0rem;
-            padding-right: 0rem;
+        /* Hides the Streamlit Header and Footer */
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
+        /* Sets the background of the app to match your portfolio black */
+        [data-testid="stAppViewContainer"] {
+            background-color: #000000;
         }
-        [data-testid="stAppViewContainer"] > .main {
-            padding: 0;
-            margin: 0;
-        }
-        iframe {
-            display: block;
-            border: none;
-            height: 100vh;
-            width: 100vw;
+        /* Removes the top margin of the main app */
+        .main {
+            margin-top: -50px;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# 3. Read your index.html file
+# 3. Load index.html
 try:
     with open("index.html", 'r', encoding='utf-8') as f:
-        html_data = f.read()
+        html_content = f.read()
     
-    # 4. Display the HTML with full viewport height and width
-    components.html(html_data, height=2000, scrolling=True) # Adjust height if needed
+    # 4. Display HTML with full width/height
+    # We use width=None to let it auto-expand to 100%
+    components.html(html_content, height=2000, scrolling=True)
 except FileNotFoundError:
-    st.error("index.html not found!")
+    st.error("Error: index.html not found in the root directory.")
