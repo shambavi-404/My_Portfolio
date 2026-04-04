@@ -1,29 +1,31 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# 1. Page Configuration
+# 1. Wide Layout
 st.set_page_config(page_title="Shambavi P | Portfolio", page_icon="💻", layout="wide")
 
-# 2. Hard Override of Streamlit's CSS to remove ALL white space
+# 2. Advanced CSS to kill the gap
 st.markdown("""
     <style>
-        /* Removes padding from the main block */
+        /* This targets the exact container Streamlit uses for content */
         .block-container {
             padding-top: 0rem !important;
             padding-bottom: 0rem !important;
-            padding-left: 0rem !important;
-            padding-right: 0rem !important;
+            margin-top: -5rem !important; /* Pulls content up significantly */
         }
-        /* Hides the Streamlit Header and Footer */
-        header {visibility: hidden;}
-        footer {visibility: hidden;}
-        /* Sets the background of the app to match your portfolio black */
+        
+        /* Hides the top bar entirely */
+        header {visibility: hidden !important;}
+        footer {visibility: hidden !important;}
+        
+        /* Force background color to match your portfolio */
         [data-testid="stAppViewContainer"] {
-            background-color: #000000;
+            background-color: #000000 !important;
         }
-        /* Removes the top margin of the main app */
-        .main {
-            margin-top: -50px;
+
+        /* Removes additional padding from the main area */
+        .main .block-container {
+            max-width: 100%;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -33,8 +35,8 @@ try:
     with open("index.html", 'r', encoding='utf-8') as f:
         html_content = f.read()
     
-    # 4. Display HTML with full width/height
-    # We use width=None to let it auto-expand to 100%
-    components.html(html_content, height=2000, scrolling=True)
+    # 4. Display HTML 
+    # Use scrolling=False if you want it to feel like one single page
+    components.html(html_content, height=1200, scrolling=True) 
 except FileNotFoundError:
-    st.error("Error: index.html not found in the root directory.")
+    st.error("index.html not found.")
