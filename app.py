@@ -19,7 +19,7 @@ st.markdown("""
         /* 3. Adjust this margin to bring your header back into view */
         /* If it's still missing, change -2rem to 0rem */
         .main {
-            margin-top: -2rem !important; 
+            margin-top: -0rem !important; 
         }
 
         /* 4. Ensure the background is black so there's no white flicker */
