@@ -40,8 +40,8 @@ nav::before{content:'';position:absolute;inset:0;background:rgba(4,6,10,.75);bac
 .nav-links a:hover,.nav-links a.active{color:var(--accent)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 5% 60px}
+/* HERO — reduced top padding from 100px to 20px */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:84px 5% 40px}
 canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
 .hero-inner{max-width:1140px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;position:relative;z-index:2}
 
@@ -614,7 +614,6 @@ footer em{color:var(--accent);font-style:normal}
       <p>Open to full-time roles, internships, research collabs, and exciting AI/ML projects. Let's build something meaningful.</p>
       <div class="c-list">
 
-        <!-- EMAIL — opens mail client with TO pre-filled -->
         <a href="mailto:shambaviprakash21@gmail.com" class="c-item">
           <div class="c-ic">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
@@ -625,7 +624,6 @@ footer em{color:var(--accent);font-style:normal}
           <span class="c-text">shambaviprakash21@gmail.com</span>
         </a>
 
-        <!-- PHONE -->
         <a href="tel:+919444858056" class="c-item">
           <div class="c-ic">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
@@ -635,7 +633,6 @@ footer em{color:var(--accent);font-style:normal}
           <span class="c-text">+91 9444858056</span>
         </a>
 
-        <!-- GITHUB — corrected to real profile -->
         <a href="https://github.com/shambavi-404" target="_blank" rel="noopener noreferrer" class="c-item">
           <div class="c-ic">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)">
@@ -645,7 +642,6 @@ footer em{color:var(--accent);font-style:normal}
           <span class="c-text">github.com/shambavi-404</span>
         </a>
 
-        <!-- LOCATION -->
         <a href="#" class="c-item">
           <div class="c-ic">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
