@@ -41,8 +41,9 @@ nav::before{content:'';position:absolute;inset:0;background:rgba(4,6,10,.75);bac
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 
 /* HERO — reduced top padding from 100px to 20px */
-.hero{min-height:100vh;display:flex;align-items:flex-start;position:relative;overflow:hidden;padding:90px 5% 40px}
-canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
+
+.hero{min-height:0;height:auto;display:flex;align-items:center;position:relative;overflow:hidden;padding:100px 5% 50px}
+canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6;height:100%}
 .hero-inner{max-width:1140px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;position:relative;z-index:2;padding-top:20px}
 
 /* AVATAR */
@@ -352,8 +353,8 @@ footer em{color:var(--accent);font-style:normal}
 </div>
 
 <!-- ABOUT STRIP -->
+<div class="section" style="padding-top:30px;padding-bottom:60px"></div>
 
-<div class="section" style="padding-top:0;margin-top:-60px;position:relative;z-index:3"></div>
   <div class="about-strip reveal">
     <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:rgba(0,245,196,.07);border:1px solid rgba(0,245,196,.18);display:flex;align-items:center;justify-content:center;font-size:24px">⚡</div>
     <p>Currently pursuing <em>B.Tech in AI & Data Science</em>, I specialize in building end-to-end ML systems — from raw data pipelines to deployed dashboards. With internships at <em>Collabrain Systems</em> and <em>SmartED Innovations</em>, I bring real industry experience to every project I take on.</p>
@@ -705,7 +706,7 @@ const canvas=document.getElementById('heroCanvas');
 const ctx=canvas.getContext('2d');
 let W,H,nodes=[],mx=0,my=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;initNodes()}
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=document.querySelector('.hero').offsetHeight;initNodes()}
 function initNodes(){
   nodes=[];
   const count=Math.floor(W*H/14000);
