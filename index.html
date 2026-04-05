@@ -229,6 +229,26 @@ canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
 .ach-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:5px}
 .ach-desc{font-size:15px;color:var(--muted);line-height:1.7;font-weight:300}
 
+/* LANGUAGES */
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;cursor:default}
+.lang-card:hover{transform:translateY(-5px);border-color:rgba(0,245,196,.25)}
+.lang-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.lang-flag{font-size:28px;line-height:1}
+.lang-badge{font-family:'Share Tech Mono',monospace;font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:.5px}
+.badge-native{background:rgba(0,245,196,.08);border:1px solid rgba(0,245,196,.2);color:var(--accent)}
+.badge-prof{background:rgba(139,111,255,.08);border:1px solid rgba(139,111,255,.2);color:var(--accent2)}
+.badge-cert{background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.2);color:var(--accent4)}
+.lang-name{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:4px}
+.lang-script{font-size:13px;color:var(--muted);margin-bottom:14px;font-weight:300}
+.lang-bar-bg{height:5px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden;margin-bottom:8px}
+.lang-bar-fill{height:100%;border-radius:3px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.bar-native{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.bar-prof{background:linear-gradient(90deg,var(--accent2),var(--accent3))}
+.bar-inter{background:linear-gradient(90deg,var(--accent3),var(--accent4))}
+.bar-cert{background:linear-gradient(90deg,var(--accent4),var(--accent))}
+.lang-desc{font-size:13px;color:var(--muted);font-weight:300;line-height:1.6}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
 .contact-left{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:38px}
@@ -622,6 +642,62 @@ footer em{color:var(--accent);font-style:normal}
     </div>
   </div>
 </div>
+<!-- LANGUAGES -->
+<div class="section" id="languages" style="position:relative">
+  <div class="s-glow" style="width:400px;height:400px;background:var(--glow1);top:-80px;left:-80px"></div>
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">06 · LANGUAGES</span></div>
+    <h2 class="sec-title">Spoken <span class="grad">Languages</span></h2>
+    <p class="sec-sub">Multilingual communicator bridging cultures through language.</p>
+  </div>
+  <div class="lang-grid reveal">
+
+    <div class="lang-card">
+      <div class="lang-top">
+        <span class="lang-flag">🇮🇳</span>
+        <span class="lang-badge badge-native">Native</span>
+      </div>
+      <p class="lang-name">Telugu</p>
+      <p class="lang-script">తెలుగు · Mother Tongue</p>
+      <div class="lang-bar-bg"><div class="lang-bar-fill bar-native" data-w="100"></div></div>
+      <p class="lang-desc">Mother tongue — fully fluent in speaking, reading & writing.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-top">
+        <span class="lang-flag">🇮🇳</span>
+        <span class="lang-badge badge-native">Fluent</span>
+      </div>
+      <p class="lang-name">Tamil</p>
+      <p class="lang-script">தமிழ்</p>
+      <div class="lang-bar-bg"><div class="lang-bar-fill bar-prof" data-w="92"></div></div>
+      <p class="lang-desc">Fully fluent — spoken and written communication across daily and academic contexts.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-top">
+        <span class="lang-flag">🇬🇧</span>
+        <span class="lang-badge badge-prof">Professional</span>
+      </div>
+      <p class="lang-name">English</p>
+      <p class="lang-script">English</p>
+      <div class="lang-bar-bg"><div class="lang-bar-fill bar-inter" data-w="88"></div></div>
+      <p class="lang-desc">Professional proficiency — academic writing, technical documentation & communication.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-top">
+        <span class="lang-flag">🇮🇳</span>
+        <span class="lang-badge badge-cert">Certified</span>
+      </div>
+      <p class="lang-name">Hindi</p>
+      <p class="lang-script">हिन्दी · Praveen Uttaradh</p>
+      <div class="lang-bar-bg"><div class="lang-bar-fill bar-cert" data-w="65"></div></div>
+      <p class="lang-desc">Reading & writing proficiency — certified by Dakshin Bharat Hindi Prachar Sabha.</p>
+    </div>
+
+  </div>
+</div>
 
 <!-- CONTACT -->
 <div class="section" id="contact" style="position:relative">
@@ -789,6 +865,7 @@ const barObs=new IntersectionObserver(es=>{
 },{threshold:.3});
 document.querySelectorAll('.skill-card').forEach(c=>barObs.observe(c));
 
+document.querySelectorAll('.lang-card').forEach(c => barObs.observe(c));
 // COUNT UP
 function countUp(el){
   const t=parseInt(el.dataset.count);let n=0;
