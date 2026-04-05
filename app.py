@@ -49,7 +49,7 @@ try:
     # Inject script just before </body>
     html_with_resize = html_content.replace('</body>', auto_resize_script + '</body>')
 
-    components.html(html_with_resize, height=800, scrolling=False)
+    components.html(html_with_resize, height=8000, scrolling=False)
 
 except FileNotFoundError:
     st.error("index.html not found.")
