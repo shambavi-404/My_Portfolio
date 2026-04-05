@@ -30,7 +30,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 5%}
 nav::before{content:'';position:absolute;inset:0;background:rgba(4,6,10,.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1140px;margin:0 auto;height:64px;position:relative}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto;height:64px;position:relative}
 .logo{font-family:'Share Tech Mono',monospace;color:var(--accent);font-size:15px;letter-spacing:3px;position:relative}
 .logo::after{content:'';display:inline-block;width:2px;height:14px;background:var(--accent);margin-left:2px;animation:blink 1s step-end infinite;vertical-align:middle}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
@@ -43,7 +43,7 @@ nav::before{content:'';position:absolute;inset:0;background:rgba(4,6,10,.75);bac
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:84px 5% 40px}
 canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
-.hero-inner{max-width:1140px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;position:relative;z-index:2}
+.hero-inner{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;position:relative;z-index:2}
 
 /* AVATAR */
 .avatar-outer{position:relative;width:300px;height:300px}
@@ -92,7 +92,7 @@ canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
 @keyframes slideIn{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
 
 /* SECTION */
-.section{max-width:1140px;margin:0 auto;padding:100px 5%}
+.section{max-width:1400px;margin:0 auto;padding:100px 3%}
 .sec-head{margin-bottom:60px}
 .sec-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .sec-line{width:24px;height:1px;background:var(--accent)}
@@ -258,7 +258,7 @@ canvas#heroCanvas{position:absolute;inset:0;z-index:0;opacity:.6}
 
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:32px 5%;position:relative;z-index:2}
-.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
 footer p{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:1px}
 footer em{color:var(--accent);font-style:normal}
 .footer-links{display:flex;gap:20px}
@@ -633,14 +633,14 @@ footer em{color:var(--accent);font-style:normal}
       <p>Open to full-time roles, internships, research collabs, and exciting AI/ML projects. Let's build something meaningful.</p>
       <div class="c-list">
 
-        <a href="mailto:shambaviprakash21@gmail.com" class="c-item">
+        <a href="/cdn-cgi/l/email-protection#0b78636a66696a7d627b796a606a7863393a4b6c666a626725686466" class="c-item">
           <div class="c-ic">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
           </div>
-          <span class="c-text">shambaviprakash21@gmail.com</span>
+          <span class="c-text"><span class="__cf_email__" data-cfemail="f7849f969a9596819e8785969c96849fc5c6b7909a969e9bd994989a">[email&#160;protected]</span></span>
         </a>
 
         <a href="tel:+919444858056" class="c-item">
@@ -700,13 +700,13 @@ footer em{color:var(--accent);font-style:normal}
   <div class="footer-inner">
     <p>crafted with 💻 by <em>Shambavi P</em> · AI/ML Engineer · Chennai</p>
     <div class="footer-links">
-      <a href="mailto:shambaviprakash21@gmail.com">email</a>
+      <a href="/cdn-cgi/l/email-protection#e99a8188848b889f80999b8882889a81dbd8a98e84888085c78a8684">email</a>
       <a href="https://github.com/shambavi-404" target="_blank" rel="noopener noreferrer">github</a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // CUSTOM CURSOR
 const dot=document.getElementById('curDot'),ring=document.getElementById('curRing');
 document.addEventListener('mousemove',e=>{
@@ -796,15 +796,4 @@ const st=document.querySelector('.hero-stats');if(st)cObs.observe(st);
 
 // NAV ACTIVE
 const secs=document.querySelectorAll('[id]');
-const navAs=document.querySelectorAll('.nav-a');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
-  navAs.forEach(a=>{
-    const match=a.getAttribute('href')==='#'+cur;
-    a.classList.toggle('active',match);
-  });
-},{passive:true});
-</script>
-</body>
-</html>
+const navAs=document.q
